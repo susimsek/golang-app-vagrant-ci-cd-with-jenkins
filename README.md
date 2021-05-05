@@ -33,7 +33,7 @@ helm install app helm-chart/app
 
 ## Installation Using Vagrant for Docker-Compose Deployment
 
-<img src="https://github.com/susimsek/golang-app-vagrant-ci-cd-with-jenkins/blob/main/images/vagrant-docker-compose-installation1.png" alt="Golang Vagrant Docker Compose Installation" width="100%" height="100%"/> 
+<img src="https://github.com/susimsek/golang-app-vagrant-ci-cd-with-jenkins/blob/main/images/vagrant-docker-compose-installation.png" alt="Golang Vagrant Docker Compose Installation" width="100%" height="100%"/> 
 
 ### Prerequisites for Docker-Compose Deployment
 
