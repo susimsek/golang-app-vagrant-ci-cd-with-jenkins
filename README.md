@@ -74,7 +74,7 @@ http://192.168.12.11:8080/jenkins
 
 ## Installation Using Vagrant for Kubernetes Deployment
 
-<img src="https://github.com/susimsek/golang-app-vagrant-ci-cd-with-jenkins/blob/main/images/vagrant-k8s-installation.png?v=2" alt="Golang Vagrant Kubernetes Installation" width="100%" height="100%"/> 
+<img src="https://github.com/susimsek/golang-app-vagrant-ci-cd-with-jenkins/blob/main/images/vagrant-k8s-installation.png?v=2sdds" alt="Golang Vagrant Kubernetes Installation" width="100%" height="100%"/> 
 
 ### Prerequisites for Kubernetes Deployment
 
