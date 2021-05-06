@@ -1,7 +1,7 @@
 #!/bin/bash
 
 KUBERNETES_DASHBOARD_ENABLED=true
-JENKINS_ENABLED=false
+JENKINS_ENABLED=true
 
 # DO NOT Execute this script with sudo
 if [ $SUDO_USER ]; then
