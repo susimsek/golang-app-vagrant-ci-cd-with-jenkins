@@ -119,7 +119,7 @@ http://app.info/playground
 
 You can access the Jenkins from the following url.
 
-http://jenkins.info:8080/jenkins
+http://jenkins.info/jenkins
 
 ## Golang App Used Technologies
 
