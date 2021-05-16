@@ -115,7 +115,7 @@ helm install app helm-chart/app
 
 You can access the Playground from the following url.
 
-http://app.info:9000/playground
+http://app.info/playground
 
 You can access the Jenkins from the following url.
 
