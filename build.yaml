@@ -23,6 +23,14 @@ spec:
       volumeMounts:
         - name: dockersock
           mountPath: /var/run/docker.sock
+    - name: kaniko
+      image: gcr.io/kaniko-project/executor:debug
+      command:
+        - /busybox/cat
+      tty: true
+      volumeMounts:
+        - name: jenkins-docker-cfg
+          mountPath: /kaniko/.docker
     - name: kubectl
       image: lachlanevenson/k8s-kubectl:v1.19.9
       command:
@@ -40,3 +48,11 @@ spec:
     - name: gomodules
       hostPath:
         path: /go/pkg/mod
+    - name: jenkins-docker-cfg
+      projected:
+        sources:
+        - secret:
+            name: regcred
+            items:
+              - key: .dockerconfigjson
+                path: config.json

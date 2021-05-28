@@ -24,6 +24,8 @@ pipeline {
                  """
            }
         }
+
+
         stage('Docker Build') {
             steps {
                    sh "docker build -t ${IMAGE_REGISTRY}:${IMAGE_VERSION} ."
@@ -36,6 +38,7 @@ pipeline {
                     }
             }
         }
+
         stage('Deploy Docker-compose') {
              steps {
                sh "docker-compose pull"

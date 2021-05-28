@@ -63,28 +63,20 @@ pipeline {
                }
             }
         }
-        stage('Docker Build') {
-             when {
+
+
+        stage('Build with Kaniko') {
+          when {
                 environment name: 'DEPLOY', value: 'true'
-             }
-            steps {
-                container('docker') {
-                    sh "docker build -t ${IMAGE_REGISTRY}:${IMAGE_VERSION} ."
-                }
-            }
-        }
-        stage('Docker Publish') {
-            when {
-                environment name: 'DEPLOY', value: 'true'
-            }
-            steps {
-                container('docker') {
-                    withDockerRegistry([credentialsId: "${IMAGE_REGISTRY_CREDENTIAL}", url: ""]) {
-                        sh "docker push ${IMAGE_REGISTRY}:${IMAGE_VERSION}"
-                    }
-                }
-            }
-        }
+          }
+          steps {
+          container('kaniko') {
+             sh "/kaniko/executor -f Dockerfile -c . --destination=${IMAGE_REGISTRY}:${IMAGE_VERSION}"
+          }
+          }
+
+         }
+
         stage('Kubernetes Deploy') {
               when {
                     environment name: 'DEPLOY', value: 'true'
