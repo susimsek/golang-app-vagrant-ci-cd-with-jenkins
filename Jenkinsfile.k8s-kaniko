@@ -66,14 +66,14 @@ pipeline {
 
 
         stage('Build with Kaniko') {
-          when {
-                environment name: 'DEPLOY', value: 'true'
-          }
-          steps {
-          container('kaniko') {
-             sh "/kaniko/executor -f Dockerfile -c . --destination=${IMAGE_REGISTRY}:${IMAGE_VERSION}"
-          }
-          }
+              when {
+                    environment name: 'DEPLOY', value: 'true'
+              }
+              steps {
+                  container('kaniko') {
+                      sh "/kaniko/executor -f Dockerfile -c . --destination=${IMAGE_REGISTRY}:${IMAGE_VERSION}"
+                  }
+              }
 
          }
 
